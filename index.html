@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>1 ano 🤍</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- INTRO -->
+  <div id="intro">
+    <h1>obrigado por esse 1 ano amor🤍</h1>
+    <p>Clique quando estiver pronta</p>
+    <button onclick="startSite()">Entrar</button>
+  </div>
+
+  <!-- SITE -->
+  <div id="site">
+
+
+    <!-- PÁGINA DOS CARDS -->
+    <div id="cards-page">
+
+      <!-- BOTÕES -->
+      <div class="buttons">
+        <button onclick="showCard(0)"></button>
+        <button onclick="showCard(1)"></button>
+        <button onclick="showCard(2)"></button>
+        <button onclick="nextCard()">→</button>
+        <button onclick="goToVideo()">🎥</button>
+        
+
+      </div>
+
+      <!-- CARD -->
+      <div class="card-container">
+        <img
+          id="cardImage"
+          src="assets/images/card1.jpeg"
+          class="card-img"
+        >
+      </div>
+
+      <!-- MÚSICA -->
+     <audio id="music" src="assets/music/music2.mp3" loop></audio>
+     
+    </div> <!-- fecha cards-page -->
+
+    <!-- PÁGINA DO VÍDEO -->
+    <div id="video-page" class="hidden">
+
+      <div class="video-area">
+        <video id="video" controls>
+          <source src="assets/video/video.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="letter">
+        <p>
+          Desde o dia em que ________, eu percebi que você mudou minha vida de um jeito que
+          eu nunca vou conseguir explicar.
+        </p>
+        <p>
+          Tudo em você me faz ________, e eu espero que a gente ainda ________ juntos.
+        </p>
+      </div>
+
+      <div class="timer" id="timer"></div>
+
+    </div> <!-- fecha video-page -->
+
+  </div> <!-- fecha site -->
+
+  <script src="script.js"></script>
+</body>
+</html>
