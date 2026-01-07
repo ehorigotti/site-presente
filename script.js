@@ -18,7 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "assets/images/card1.jpeg",
     "assets/images/card2.jpeg",
     "assets/images/card3.jpeg",
-    "assets/images/card4.jpeg"
+    "assets/images/card4.jpeg",
+    "assets/images/card5.jpeg",
+    "assets/images/card6.jpeg",
+    "assets/images/card7.jpeg",
   ];
   let currentCard = 0;
 
@@ -100,5 +103,6 @@ document.addEventListener("DOMContentLoaded", () => {
   site.style.display = "none";
   videoPage.style.display = "none";
 });
+
 
 
