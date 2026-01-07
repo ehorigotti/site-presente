@@ -2,13 +2,7 @@
 // SCRIPT PRINCIPAL DO SITE
 // ==========================
 
-document.addEventListener("DOMContentLoaded", () => {window.startSite = () => {
-  intro.style.display = "none";
-  site.style.display = "block";
-  cardsPage.style.display = "block";
-
-  showCard(0);
-};
+document.addEventListener("DOMContentLoaded", () => {
 
   // === ELEMENTOS PRINCIPAIS ===
   const intro = document.getElementById("intro");
@@ -28,38 +22,19 @@ document.addEventListener("DOMContentLoaded", () => {window.startSite = () => {
   let currentCard = 0;
 
   // ==========================
-  // FUNÇÃO INICIAR SITE
+  // FUNÇÃO INICIAR SITE (EXPOSTA AO HTML)
   // ==========================
   window.startSite = () => {
-    // Esconde intro e mostra site/cards
     intro.style.display = "none";
     site.style.display = "block";
     cardsPage.style.display = "block";
+    videoPage.style.display = "none";
 
-    // Tocar música de forma segura
-    const playPromise = music.play();
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => console.log("Música tocando"))
-        .catch(err => console.log("Erro ao tocar música:", err));
-    }
-
-    // Mostrar o primeiro card
     showCard(0);
   };
 
   // ==========================
-  // FUNÇÃO PARA TOCAR MÚSICA (opcional)
-  // ==========================
-  function playMusic(src, loop = true) {
-    music.src = src;
-    music.loop = loop;
-    music.load();
-    music.play().catch(err => console.log("Erro ao tocar música:", err));
-  }
-
-  // ==========================
-  // FUNÇÃO PARA MOSTRAR UM CARD
+  // MOSTRAR CARD
   // ==========================
   window.showCard = (index) => {
     if (index < 0 || index >= cards.length) return;
@@ -68,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {window.startSite = () => {
   };
 
   // ==========================
-  // FUNÇÃO PARA PRÓXIMO CARD
+  // PRÓXIMO CARD
   // ==========================
   window.nextCard = () => {
     currentCard = (currentCard + 1) % cards.length;
@@ -76,29 +51,17 @@ document.addEventListener("DOMContentLoaded", () => {window.startSite = () => {
   };
 
   // ==========================
-  // FUNÇÃO PARA IR PARA VÍDEO
+  // IR PARA VÍDEO
   // ==========================
   window.goToVideo = () => {
-    // Parar música
     if (!music.paused) music.pause();
 
-    // Esconder cards, mostrar vídeo
     cardsPage.style.display = "none";
     videoPage.style.display = "block";
 
-    // Tocar vídeo
-    const playPromise = video.play();
-    if (playPromise !== undefined) {
-      playPromise.catch(err => console.warn("Erro ao tocar vídeo:", err));
-    }
+    video.play().catch(() => {});
   };
 
-  // ==========================
-  // INICIALIZAÇÕES
-  // ==========================
-  // Site começa escondido
-  site.style.display = "none";
-  videoPage.style.display = "none";
   // ==========================
   // TIMER / CONTAGEM REGRESSIVA
   // ==========================
@@ -121,11 +84,13 @@ document.addEventListener("DOMContentLoaded", () => {window.startSite = () => {
       const seconds = Math.floor((diff / 1000) % 60);
 
       countdownEl.innerText =
-        `${days} dias, ${hours}h ${minutes}m ${seconds}s`;
+        `Eu só sou completo com você 🤍\n${days} dias ${hours}h ${minutes}m ${seconds}s`;
     }, 1000);
   }
+
+  // ==========================
+  // INICIALIZAÇÃO
+  // ==========================
+  site.style.display = "none";
+  videoPage.style.display = "none";
 });
-
-
-
-
