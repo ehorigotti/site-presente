@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "assets/images/card1.jpeg",
     "assets/images/card2.jpeg",
     "assets/images/card3.jpeg"
-    "assets/images/card4.jpeg"
   ];
   let currentCard = 0;
 
@@ -119,5 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   }
 });
+
 
 
