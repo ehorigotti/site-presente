@@ -92,4 +92,30 @@ document.addEventListener("DOMContentLoaded", () => {
   // Site começa escondido
   site.style.display = "none";
   videoPage.style.display = "none";
+  // ==========================
+  // TIMER / CONTAGEM REGRESSIVA
+  // ==========================
+  const targetDate = new Date("2026-02-02T00:00:00");
+  const countdownEl = document.getElementById("countdown");
+
+  if (countdownEl) {
+    setInterval(() => {
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        countdownEl.innerText = "Chegou o nosso dia 🤍";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      countdownEl.innerText =
+        `${days} dias, ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  }
 });
+
