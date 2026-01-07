@@ -25,13 +25,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // FUNÇÃO INICIAR SITE (EXPOSTA AO HTML)
   // ==========================
   window.startSite = () => {
-    intro.style.display = "none";
-    site.style.display = "block";
-    cardsPage.style.display = "block";
-    videoPage.style.display = "none";
+  intro.style.display = "none";
+  site.style.display = "block";
+  cardsPage.style.display = "block";
 
-    showCard(0);
-  };
+  // FORÇA a música a tocar no clique
+  music.currentTime = 0;
+  music.volume = 1;
+  music.loop = true;
+  music.play();
+
+  showCard(0);
+};
 
   // ==========================
   // MOSTRAR CARD
@@ -94,3 +99,4 @@ document.addEventListener("DOMContentLoaded", () => {
   site.style.display = "none";
   videoPage.style.display = "none";
 });
+
