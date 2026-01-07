@@ -135,4 +135,13 @@ video {
   opacity: 0.85;
 }
 }
+.lacuna {
+  display: inline-block;
+  min-width: 120px;
+  border-bottom: 2px solid rgba(255,255,255,0.7);
+  margin: 0 6px;
+  height: 1.2em;
+}
+
+
 
