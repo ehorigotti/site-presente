@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================
   // TIMER / CONTAGEM REGRESSIVA
   // ==========================
-  const targetDate = new Date("2026-02-02T00:00:00");
+  const targetDate = new Date("2026-02-02T07:00:00");
   const countdownEl = document.getElementById("countdown");
 
   if (countdownEl) {
@@ -103,6 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
   site.style.display = "none";
   videoPage.style.display = "none";
 });
+
 
 
 
