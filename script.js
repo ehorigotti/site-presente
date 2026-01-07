@@ -2,7 +2,14 @@
 // SCRIPT PRINCIPAL DO SITE
 // ==========================
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {window.startSite = () => {
+  intro.style.display = "none";
+  site.style.display = "block";
+  cardsPage.style.display = "block";
+
+  showCard(0);
+};
+
   // === ELEMENTOS PRINCIPAIS ===
   const intro = document.getElementById("intro");
   const site = document.getElementById("site");
@@ -118,6 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   }
 });
+
 
 
 
